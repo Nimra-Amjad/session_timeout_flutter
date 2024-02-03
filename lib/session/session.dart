@@ -1,0 +1,27 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+
+class Session {
+  BuildContext? context;
+  StreamController? streamController;
+  bool enableLoginPage = false;
+
+  void stratListener(
+      {required StreamController streamController,
+      required BuildContext context}) {
+    this.streamController = streamController;
+    this.context = context;
+    Map<String, dynamic> map = {'context': context, 'timer': true};
+    streamController.add(map);
+  }
+
+  void stopListener(
+      {required StreamController streamController,
+      required BuildContext context}) {
+    this.streamController = streamController;
+    this.context = context;
+    Map<String, dynamic> map = {'context': context, 'timer': false};
+    streamController.add(map);
+  }
+}
