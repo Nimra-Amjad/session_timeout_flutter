@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (globalNavigatorKey.currentContext != null) {
-      session.stratListener(
+      session.startListener(
           streamController: streamController,
           context: globalNavigatorKey.currentContext!);
     }
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
               .showSnackBar(SnackBar(
                   content: Container(
             color: Colors.black,
-            child: Text(
+            child: const Text(
               "Session Expired",
               style: TextStyle(color: Colors.black),
             ),
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
           redirectToFirstPage();
         }
       },
-      duration: Duration(seconds: 10),
+      duration: const Duration(seconds: 10),
       streamController: streamController,
       child: MaterialApp(
         title: 'Flutter Demo',

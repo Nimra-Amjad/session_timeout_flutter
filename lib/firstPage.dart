@@ -19,6 +19,7 @@ class FirstPage extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () {
+                  session.enableLoginPage = true;
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SecondPage()));
                 },

@@ -7,7 +7,7 @@ class Session {
   StreamController? streamController;
   bool enableLoginPage = false;
 
-  void stratListener(
+  void startListener(
       {required StreamController streamController,
       required BuildContext context}) {
     this.streamController = streamController;
